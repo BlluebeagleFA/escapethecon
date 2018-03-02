@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>Javascript Roguelike</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+    </head>
+    <body>
+        <script src="assets/rot.min.js"></script>
+        <script src="assets/sprintf.min.js"></script>
+        <script src="assets/game.js"></script>
+        <script src="assets/utilities.js"></script>
+        <script src="assets/geometry.js"></script>
+        <script src="assets/screens.js"></script>
+        <script src="assets/glyph.js"></script>
+        <script src="assets/dynamicglyph.js"></script>
+        <script src="assets/tile.js"></script>
+        <script src="assets/builder.js"></script>
+        <script src="assets/map.js"></script>
+        <script src="assets/entity.js"></script>
+        <script src="assets/entitymixins.js"></script>
+        <script src="assets/item.js"></script>
+        <script src="assets/itemmixins.js"></script>
+        <script src="assets/repository.js"></script>
+        <script src="assets/entities.js"></script>
+        <script src="assets/items.js"></script>
+        <script src="assets/maps/cave.js"></script>
+        <script src="assets/maps/bosscavern.js"></script>
+        <script src="assets/maps/mapgen.js"></script>
+        <div id ="log"></div>
+        <div class = "clear"></div>
+        <div id ="commands">
+        	<div id ="movement">
+	        	<div id ="west" class="button floater">&#8592;</div>
+	        	<div class="buttonstacker floater">
+	        		<div id ="north" class="button">&#8593;</div>
+	        		<div id ="south" class="button">&#8595;</div>
+	        	</div>
+	        	<div id ="east" class="button floater">&#8594;</div>
+	        	<div id="updown" class="buttonstacker floater">
+	        		<div id ="up" class="button">&#8625;</div>
+	        		<div id ="down" class="button">&#8627;</div>
+	        	</div>
+	        	<div id="okcancel" class="buttonstacker floater">
+	        		<div id ="ok" class="button">&#10004;</div>
+	        		<div id ="cancel" class="button">&#10006;</div>
+	        	</div>
+        	</div>
+        	<div id = "other">
+        		<div id = "inventory" class="button floater">INV</div>
+        		<div id = "status" class="button floater">STAT</div>
+        		<div id = "eat" class="button floater">EAT</div>
+        		<div id = "wield" class="button floater">WEAP</div>
+        		<div id = "wear" class="button floater">WEAR</div>
+        		<div id = "get" class="button floater">GET</div>
+        		<div id = "drop" class="button floater">DROP</div>
+        		<div id = "use" class="button floater">USE</div>
+        	</div>
+        </div>
+    </body>
+</html>

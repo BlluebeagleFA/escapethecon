@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+body 
+{ 
+	margin: 0px;
+	background-color: black;
+}
+canvas
+{
+	position: absolute;
+	top: 0;
+}
+#console
+{
+	line-height: 0;
+}
+#log
+{
+	width: 25vw;
+	height: 100vh;
+	background-color: black;
+	color: white;
+	overflow-y: scroll;
+	float: right;
+	font-size: 1.5vw;
+}
+#commands
+{
+	width: 75vw;
+	height: 16vh;
+	background-color: black;
+	color: white;
+	bottom: 0;
+	position: absolute;
+	z-index: 1000;
+}
+.button
+{
+	width: 4.6vw;
+	height: 8vh;
+	border: 1px solid grey;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+	margin: 1.1vw 0.1vw 0.1vw 0.1vw;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+#other .button {
+	font-weight: normal;
+	font-size: 1vw;
+	height: 3vw;
+	padding-top: 1vw;
+}
+
+#okcancel, #updown {
+	margin-right: 1vw;
+}
+
+.buttonstacker .button
+{
+	margin: 0.1vw 0.1vw 0.1vw 0.1vw;
+}
+.button:hover
+{
+	background-color: #bec2c6;
+}
+.button:active
+{
+	background-color: #7a7c7f;
+}
+.floater 
+{
+	float: left;
+	margin-top: 4vh;
+}
+.buttonstacker
+{
+	margin-top: 0vh;
+}
+.clear
+{
+	clear: both;
+}
+#movement {
+	margin-right: 20px;
+}
