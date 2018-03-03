@@ -475,9 +475,7 @@ Game.EntityMixins.MessageRecipient = {
         this._messages = [];
     },
     receiveMessage: function(message) {
-//    	document.getElementById('log').append('\<p\>' + message + '\<\/p\>');
-    	document.getElementById('log').innerHTML += '<p>' + message + '</p>';
-    	document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+        Messenger.log(message);
     	this._messages.push(message);
     },
     getMessages: function() {

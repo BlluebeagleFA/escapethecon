@@ -350,14 +350,12 @@ Game.Screen.winScreen = {
     	};
     	
     	if (victories[lossSpecies]) {
-    		display.drawText(2, 1, victories[lossSpecies].toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + victories[lossSpecies] + '</p>';
-    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+            display.drawText(2, 1, victories[lossSpecies].toUpperCase());
+            Messenger.log(victories[lossSpecies]);
     	} else {
         	var defaultEnding = "You escaped the hotel, completely unaffected by the mutagen! You quickly become the talk of the town. Every news station wants to hear about your daring escape. People recognise you in the street, and the furry population of people who were affected by the outbreak avoids you in fear, as rumours of your furry-hunting prowess spread. You write a tell-all book, and they even make a movie about you! As to the rumours as to whether you used the furry-hunting skills you learned in your escape to keep a basement full of furry sex slaves...well, those are just rumours.";
-    		display.drawText(2, 1, defaultEnding.toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + defaultEnding + '</p>';
-    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+            display.drawText(2, 1, defaultEnding.toUpperCase());
+            Messenger.log(defaultEnding)
     	}
     },
     handleInput: function(inputType, inputData) {
@@ -387,9 +385,8 @@ Game.Screen.loseScreen = {
     	};
     	
     	if (losses[lossSpecies]) {
-    		display.drawText(2, 1, losses[lossSpecies].toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + losses[lossSpecies] + '</p>';
-    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+            display.drawText(2, 1, losses[lossSpecies].toUpperCase());
+            Messenger.log(losses[lossSpecies]);
     	} else {
 	        for (var i = 0; i < 22; i++) {
 	            display.drawText(2, i + 1, "%b{red}You got yiffed! :(".toUpperCase());
@@ -409,9 +406,8 @@ Game.Screen.koScreen = {
         this._message = entity.message;
     },
     render: function(display) {
-    	display.drawText(2, 1, this._message.toUpperCase());
-    	document.getElementById('log').innerHTML += '<p>' + this._message + '</p>';
-		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+        display.drawText(2, 1, this._message.toUpperCase());
+        Messenger.log(this._message);
     },
     handleInput: function(inputType, inputData) {
     	if (inputType === 'keydown') {
@@ -1003,8 +999,7 @@ Game.Screen.ConversationScreen.prototype.setup = function(player, conversation) 
 Game.Screen.ConversationScreen.prototype.render = function(display) {
     var letters = 'abcdefghijklmnopqrstuvwxyz';
     // Render the caption in the top row
-    document.getElementById('log').innerHTML += '<p>' + this._conversation.text + '</p>';
-    document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+    Messenger.log(this._conversation.text);
     var row = display.drawText(0, 0, this._conversation.text.toUpperCase());
     // Render the no item row if enabled
     row++;
