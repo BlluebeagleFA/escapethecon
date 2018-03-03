@@ -3,6 +3,7 @@
     <head>
         <title>Javascript Roguelike</title>
         <meta charset="utf-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
     </head>
     <body class="layout-row">
@@ -31,31 +32,65 @@
         <div class="layout-column flex">
             <div id="screen" class="flex"></div>
             <div id="commands" class="layout-row">
-                <div id="movement" class="layout-row layout-align-start-center">
-                    <button type="button" id="west" class="button floater">&#8592;</button>
+                <div id="movement" class="layout-row layout-align-start-center layout-wrap">
+                    <div class="flex-item-container">
+                        <button type="button" id="west">&#8592;</button>
+                    </div>
                     <div class="buttonstacker floater">
-                        <button type="button" id="north" class="button">&#8593;</button>
-                        <button type="button" id="south" class="button">&#8595;</button>
+                        <div class="flex-item-container">
+                            <button type="button" id="north">&#8593;</button>
+                        </div>
+                        <div class="flex-item-container">
+                            <button type="button" id="south">&#8595;</button>
+                        </div>
                     </div>
-                    <button id ="east" class="button floater">&#8594;</button>
-                    <div id="updown" class="buttonstacker floater">
-                        <button type="button" id="up" class="button">&#8625;</button>
-                        <button type="button" id="down" class="button">&#8627;</button>
+                    <div class="flex-item-container">
+                        <button id ="east">&#8594;</button>
                     </div>
-                    <div id="okcancel" class="buttonstacker floater">
-                        <button type="button" id="ok" class="button">&#10004;</button>
-                        <button type="button" id="cancel" class="button">&#10006;</button>
+                    <div class="layout-row layout-align-start-center">
+                        <div>
+                            <div class="flex-item-container">
+                                <button type="button" id="up">&#8625;</button>
+                            </div>
+                            <div class="flex-item-container">
+                                <button type="button" id="down">&#8627;</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-item-container">
+                                <button type="button" id="ok">&#10004;</button>
+                            </div>
+                            <div class="flex-item-container">
+                                <button type="button" id="cancel">&#10006;</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="other" class="layout-row layout-align-start-center">
-                    <button type="button" id="inventory" class="button floater">Inv</button>
-                    <button type="button" id="status" class="button floater">Stat</button>
-                    <button type="button" id="eat" class="button floater">Eat</button>
-                    <button type="button" id="wield" class="button floater">Weap</button>
-                    <button type="button" id="wear" class="button floater">Wear</button>
-                    <button type="button" id="get" class="button floater">Get</button>
-                    <button type="button" id="drop" class="button floater">Drop</button>
-                    <button type="button" id="use" class="button floater">Use</button>
+                <div id="other" class="layout-row layout-align-start-center layout-wrap">
+                    <div class="flex-item-container">
+                        <button type="button" id="inventory">Inv</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="status">Stat</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="eat">Eat</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="wield">Weap</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="wear">Wear</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="get">Get</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="drop">Drop</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="use">Use</button>
+                    </div>
                 </div>
             </div>
         </div>
