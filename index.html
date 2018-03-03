@@ -5,7 +5,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
     </head>
-    <body>
+    <body class="layout-row">
         <script src="assets/rot.min.js"></script>
         <script src="assets/sprintf.min.js"></script>
         <script src="assets/game.js"></script>
@@ -27,10 +27,10 @@
         <script src="assets/maps/cave.js"></script>
         <script src="assets/maps/bosscavern.js"></script>
         <script src="assets/maps/mapgen.js"></script>
-        <div>
-            <div id="screen"></div>
-            <div id="commands">
-                <div id="movement">
+        <div class="layout-column flex">
+            <div id="screen" class="flex"></div>
+            <div id="commands" class="layout-row">
+                <div id="movement" class="layout-row layout-align-start-center">
                     <button type="button" id="west" class="button floater">&#8592;</button>
                     <div class="buttonstacker floater">
                         <button type="button" id="north" class="button">&#8593;</button>
@@ -46,7 +46,7 @@
                         <button type="button" id="cancel" class="button">&#10006;</button>
                     </div>
                 </div>
-                <div id="other">
+                <div id="other" class="layout-row layout-align-start-center">
                     <button type="button" id="inventory" class="button floater">Inv</button>
                     <button type="button" id="status" class="button floater">Stat</button>
                     <button type="button" id="eat" class="button floater">Eat</button>

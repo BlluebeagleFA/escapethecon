@@ -1,80 +1,92 @@
+html,
+body {
+	height: 100%
+}
 body 
 { 
 	margin: 0px;
+	color: white;
 	background-color: black;
 }
-canvas
-{
-	position: absolute;
-	top: 0;
-}
-#console
-{
-	line-height: 0;
+button {
+	user-select: none;
 }
 #log
 {
-	width: 25vw;
-	height: 100vh;
-	background-color: black;
-	color: white;
-	overflow-y: scroll;
-	float: right;
+	box-sizing: border-box;
 	font-size: 1.5vw;
+	height: 100%;
+	overflow-y: auto;
+	padding: 8px;
+	width: 25vw;
 }
-#commands
-{
-	width: 75vw;
-	height: 16vh;
-	background-color: black;
-	color: white;
-	bottom: 0;
-	position: absolute;
-	z-index: 1000;
+
+#commands > * {
+	padding: 8px;
 }
-.button
+#commands button
 {
-	width: 4.6vw;
-	height: 8vh;
-	border: 1px solid grey;
-	color: black;
-	display: block;.
 	background-color: white;
+	border: 1px solid grey;
+	box-sizing: border-box;
+	color: black;
 	cursor: pointer;
-	margin: 1.1vw 0.1vw 0.1vw 0.1vw;
-    font-size: 2vw;
-    font-weight: bold;
+	display: block;
+	font-size: 1vw;
+	height: 8vh;
+	overflow: hidden;
 	text-align: center;
 	text-transform: uppercase;
-    vertical-align: middle;
+	width: 4.6vw;
 }
-#other .button {
-	font-weight: normal;
-	font-size: 1vw;
-	height: 3vw;
-	padding-top: 1vw;
-}
-
-#okcancel, #updown {
-	margin-right: 1vw;
-}
-
-.buttonstacker .button
-{
-	margin: 0.1vw 0.1vw 0.1vw 0.1vw;
-}
-.button:hover
+#commands button:focus,
+#commands button:hover
 {
 	background-color: #bec2c6;
 }
-.button:active
+#commands button:active
 {
 	background-color: #7a7c7f;
 }
-.buttonstacker
-{
-	margin-top: 0vh;
+#commands > #movement button {
+	font-size: 2vw;
+	font-weight: bold;
 }
-#movement {
-	margin-right: 20px;
+#screen {
+	position: relative;
+	width: 100%;
+}
+#screen > canvas {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.flex {
+	box-sizing: border-box;
+	flex: 1;
+}
+
+.layout-column,
+.layout-row {
+	box-sizing: border-box;
+	display: flex
+}
+
+.layout-row {
+	flex-direction: row
+}
+
+.layout-column {
+	flex-direction: column;
+}
+
+.layout-row > .flex {
+	min-width: 0;
+}
+
+.layout-align-start-center {
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	max-width: 100%;
 }
