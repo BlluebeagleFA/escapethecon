@@ -4,12 +4,14 @@ var Game =  {
     _screenWidth: 40,
     _screenHeight: 24,
 	init: function(img) {
+		//Get width and height of the screen element
 		var screenEl = document.getElementById('screen');
 		var rect = screenEl.getBoundingClientRect();
 
 		var calculatedScreenWidth = Math.floor((rect.width/16)*0.75);
 		var calculatedScreenHeight = Math.floor((rect.height/16)*0.70)-1;
 
+		//Ensure that the width and height are even numbers only
 		if (calculatedScreenWidth % 2 > 0) ++calculatedScreenWidth;
 		if (calculatedScreenHeight % 2 > 0) ++calculatedScreenHeight;
 
