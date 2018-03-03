@@ -250,7 +250,10 @@ Game.Entity.prototype.tryMove = function(x, y, z, map) {
 			}
         	if (Math.random() < 0.15) {
         		document.getElementById('log').innerHTML += '<p>You think you can hear a survivor to the ' + ally_direction + '</p>';
-            	document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+//            	document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
+            	
+            	var o = document.getElementById('log');
+            	o.scrollTop = o.scrollHeight;
         	}
         }
         // Notify the entity that there are items at this position

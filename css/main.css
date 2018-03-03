@@ -3,6 +3,7 @@ body
 { 
 	margin: 0px;
 	background-color: black;
+	overflow-y: hidden;
 }
 canvas
 {
@@ -25,7 +26,7 @@ canvas
 }
 #commands
 {
-	width: 75vw;
+	width: 70vw;
 	height: 16vh;
 	background-color: black;
 	color: white;
