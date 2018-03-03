@@ -240,8 +240,9 @@ window.onload = function() {
 		tileSet.onload = function () {
 			// Initialize the game
 	        Game.init(tileSet);
-	        // Add the container to our HTML page
-	        document.body.appendChild(Game.getDisplay().getContainer());
+			// Add the container to our HTML page
+			document.getElementById('screen')
+				.appendChild(Game.getDisplay().getContainer());
 	        // Load the start screen
 	        Game.switchScreen(Game.Screen.startScreen);
 		};
