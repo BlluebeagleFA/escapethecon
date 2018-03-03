@@ -4,8 +4,16 @@ var Game =  {
     _screenWidth: 40,
     _screenHeight: 24,
 	init: function(img) {
-		var calculatedScreenWidth = Math.floor((window.screen.width/16)*0.75);
-		var calculatedScreenHeight = Math.floor((window.screen.height/16)*0.70)-1;
+		var screenEl = document.getElementById('screen');
+		var rect = screenEl.getBoundingClientRect();
+
+		var calculatedScreenWidth = Math.floor((rect.width/16)*0.75);
+		var calculatedScreenHeight = Math.floor((rect.height/16)*0.70)-1;
+
+		if (calculatedScreenWidth % 2 > 0) ++calculatedScreenWidth;
+		if (calculatedScreenHeight % 2 > 0) ++calculatedScreenHeight;
+
+		//console.log(calculatedScreenWidth, calculatedScreenHeight)
 		
 //		var ua = navigator.userAgent.toLowerCase();
 //		var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
