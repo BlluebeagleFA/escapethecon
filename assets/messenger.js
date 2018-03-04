@@ -1,7 +1,7 @@
 Messenger = function(window, document) {
 
-    var DEBOUNCE_TIME = 750;
-    var DURATION = 750;
+    var DURATION = 250;
+    var THROTTLE_TIME = 250;
 
     var _currentAnimationArgs;
     var _debounceTimeoutId
@@ -37,7 +37,7 @@ Messenger = function(window, document) {
                 duration: DURATION,
                 el: _logEl
             }));
-        }, DEBOUNCE_TIME);
+        }, THROTTLE_TIME);
     }
 
     function _stepTo(timestamp) {
