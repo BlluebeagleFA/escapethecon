@@ -994,12 +994,12 @@ Game.Screen.ConversationScreen.prototype.setup = function(player, conversation) 
 //    conversation.options = options;
     this._conversation = conversation;
     this._options = options;
+    Messenger.log(this._conversation.text);
 };
 
 Game.Screen.ConversationScreen.prototype.render = function(display) {
     var letters = 'abcdefghijklmnopqrstuvwxyz';
     // Render the caption in the top row
-    Messenger.log(this._conversation.text);
     var row = display.drawText(0, 0, this._conversation.text.toUpperCase());
     // Render the no item row if enabled
     row++;
