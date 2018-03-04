@@ -3,11 +3,76 @@
     <head>
         <title>Javascript Roguelike</title>
         <meta charset="utf-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
     </head>
-    <body>
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    <body class="layout-row">
+        <div class="layout-column flex">
+            <div id="screen" class="flex"></div>
+            <div id="commands" class="layout-row">
+                <div id="movement" class="layout-row layout-align-start-center layout-wrap">
+                    <div class="flex-item-container">
+                        <button type="button" id="west">&#8592;</button>
+                    </div>
+                    <div class="buttonstacker floater">
+                        <div class="flex-item-container">
+                            <button type="button" id="north">&#8593;</button>
+                        </div>
+                        <div class="flex-item-container">
+                            <button type="button" id="south">&#8595;</button>
+                        </div>
+                    </div>
+                    <div class="flex-item-container">
+                        <button id ="east">&#8594;</button>
+                    </div>
+                    <div class="layout-row layout-align-start-center">
+                        <div>
+                            <div class="flex-item-container">
+                                <button type="button" id="up">&#8625;</button>
+                            </div>
+                            <div class="flex-item-container">
+                                <button type="button" id="down">&#8627;</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-item-container">
+                                <button type="button" id="ok">&#10004;</button>
+                            </div>
+                            <div class="flex-item-container">
+                                <button type="button" id="cancel">&#10006;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="other" class="layout-row layout-align-start-center layout-wrap">
+                    <div class="flex-item-container">
+                        <button type="button" id="inventory">Inv</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="status">Stat</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="eat">Eat</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="wield">Weap</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="wear">Wear</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="get">Get</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="drop">Drop</button>
+                    </div>
+                    <div class="flex-item-container">
+                        <button type="button" id="use">Use</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="log"></div>
         <script src="assets/rot.min.js"></script>
         <script src="assets/sprintf.min.js"></script>
         <script src="assets/game.js"></script>
@@ -26,38 +91,9 @@
         <script src="assets/repository.js"></script>
         <script src="assets/entities.js"></script>
         <script src="assets/items.js"></script>
+        <script src="assets/messenger.js"></script>
         <script src="assets/maps/cave.js"></script>
         <script src="assets/maps/bosscavern.js"></script>
         <script src="assets/maps/mapgen.js"></script>
-        <div id ="log"></div>
-        <div class = "clear"></div>
-        <div id ="commands">
-        	<div id ="movement">
-	        	<div id ="west" class="button floater">&#8592;</div>
-	        	<div class="buttonstacker floater">
-	        		<div id ="north" class="button">&#8593;</div>
-	        		<div id ="south" class="button">&#8595;</div>
-	        	</div>
-	        	<div id ="east" class="button floater">&#8594;</div>
-	        	<div id="updown" class="buttonstacker floater">
-	        		<div id ="up" class="button">&#8625;</div>
-	        		<div id ="down" class="button">&#8627;</div>
-	        	</div>
-	        	<div id="okcancel" class="buttonstacker floater">
-	        		<div id ="ok" class="button">&#10004;</div>
-	        		<div id ="cancel" class="button">&#10006;</div>
-	        	</div>
-        	</div>
-        	<div id = "other">
-        		<div id = "inventory" class="button floater">INV</div>
-        		<div id = "status" class="button floater">STAT</div>
-        		<div id = "eat" class="button floater">EAT</div>
-        		<div id = "wield" class="button floater">WEAP</div>
-        		<div id = "wear" class="button floater">WEAR</div>
-        		<div id = "get" class="button floater">GET</div>
-        		<div id = "drop" class="button floater">DROP</div>
-        		<div id = "use" class="button floater">USE</div>
-        	</div>
-        </div>
     </body>
 </html>

@@ -4,12 +4,18 @@ var Game =  {
     _screenWidth: 40,
     _screenHeight: 24,
 	init: function(img) {
-//		var calculatedScreenWidth = Math.floor((window.screen.width/16)*0.75);
-//		var calculatedScreenHeight = Math.floor((window.screen.height/16)*0.70)-1;
-		
-		var calculatedScreenWidth = Math.floor(($(window).width()*0.75)/16);
-		var calculatedScreenHeight = Math.floor(($(window).height()*0.75)/16)-1;
-		
+		//Get width and height of the screen element
+		var screenEl = document.getElementById('screen');
+		var rect = screenEl.getBoundingClientRect();
+
+		var calculatedScreenWidth = Math.floor((rect.width/16)*0.75);
+		var calculatedScreenHeight = Math.floor((rect.height/16)*0.70)-1;
+
+		//Ensure that the width and height are even numbers only
+		if (calculatedScreenWidth % 2 > 0) ++calculatedScreenWidth;
+		if (calculatedScreenHeight % 2 > 0) ++calculatedScreenHeight;
+
+		//console.log(calculatedScreenWidth, calculatedScreenHeight)
 		
 //		var ua = navigator.userAgent.toLowerCase();
 //		var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
@@ -244,8 +250,9 @@ window.onload = function() {
 		tileSet.onload = function () {
 			// Initialize the game
 	        Game.init(tileSet);
-	        // Add the container to our HTML page
-	        document.body.appendChild(Game.getDisplay().getContainer());
+			// Add the container to our HTML page
+			document.getElementById('screen')
+				.appendChild(Game.getDisplay().getContainer());
 	        // Load the start screen
 	        Game.switchScreen(Game.Screen.startScreen);
 		};

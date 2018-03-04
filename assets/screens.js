@@ -86,12 +86,12 @@ Game.Screen.playScreen = {
         // Make sure we still have enough space to fit an entire game screen
         topLeftY = Math.min(topLeftY, this._player.getMap().getHeight() - Game.getScreenHeight());
         return {
-            x: Math.floor(topLeftX),
-            y: Math.floor(topLeftY)
+            x: topLeftX,
+            y: topLeftY
         };
     },
     renderTiles: function(display) {
-    	var screenWidth = Game.getScreenWidth();
+        var screenWidth = Game.getScreenWidth();
         var screenHeight = Game.getScreenHeight();
         var offsets = this.getScreenOffsets();
         var topLeftX = offsets.x;
@@ -141,16 +141,10 @@ Game.Screen.playScreen = {
                         // dark gray.
                         foreground = 'rgba(169, 169, 169, 0.75)';
                     }
-                    var char = glyph.getChar();
-                    if (char.length != 1) {
-                    	console.log("Invalid character " + char);
-                    	char = '?';
-                    }
-//                    console.log('Drawing ' + char + ' at ' + (x - topLeftX) + ',' + (y - topLeftY));
                     display.draw(
                         x - topLeftX,
                         y - topLeftY,
-                        char,
+                        glyph.getChar(),
                         foreground,
                         glyph.getBackground());
 //                        foreground, 
@@ -356,18 +350,12 @@ Game.Screen.winScreen = {
     	};
     	
     	if (victories[lossSpecies]) {
-    		display.drawText(2, 1, victories[lossSpecies].toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + victories[lossSpecies] + '</p>';
-//    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
-    		var o = document.getElementById('log');
-        	o.scrollTop = o.scrollHeight;
+            display.drawText(2, 1, victories[lossSpecies].toUpperCase());
+            Messenger.log(victories[lossSpecies]);
     	} else {
         	var defaultEnding = "You escaped the hotel, completely unaffected by the mutagen! You quickly become the talk of the town. Every news station wants to hear about your daring escape. People recognise you in the street, and the furry population of people who were affected by the outbreak avoids you in fear, as rumours of your furry-hunting prowess spread. You write a tell-all book, and they even make a movie about you! As to the rumours as to whether you used the furry-hunting skills you learned in your escape to keep a basement full of furry sex slaves...well, those are just rumours.";
-    		display.drawText(2, 1, defaultEnding.toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + defaultEnding + '</p>';
-//    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
-    		var o = document.getElementById('log');
-        	o.scrollTop = o.scrollHeight;
+            display.drawText(2, 1, defaultEnding.toUpperCase());
+            Messenger.log(defaultEnding)
     	}
     },
     handleInput: function(inputType, inputData) {
@@ -397,11 +385,8 @@ Game.Screen.loseScreen = {
     	};
     	
     	if (losses[lossSpecies]) {
-    		display.drawText(2, 1, losses[lossSpecies].toUpperCase());
-    		document.getElementById('log').innerHTML += '<p>' + losses[lossSpecies] + '</p>';
-//    		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
-    		var o = document.getElementById('log');
-        	o.scrollTop = o.scrollHeight;
+            display.drawText(2, 1, losses[lossSpecies].toUpperCase());
+            Messenger.log(losses[lossSpecies]);
     	} else {
 	        for (var i = 0; i < 22; i++) {
 	            display.drawText(2, i + 1, "%b{red}You got yiffed! :(".toUpperCase());
@@ -421,11 +406,8 @@ Game.Screen.koScreen = {
         this._message = entity.message;
     },
     render: function(display) {
-    	display.drawText(2, 1, this._message.toUpperCase());
-    	document.getElementById('log').innerHTML += '<p>' + this._message + '</p>';
-//		document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
-    	var o = document.getElementById('log');
-    	o.scrollTop = o.scrollHeight;
+        display.drawText(2, 1, this._message.toUpperCase());
+        Messenger.log(this._message);
     },
     handleInput: function(inputType, inputData) {
     	if (inputType === 'keydown') {
@@ -1012,16 +994,12 @@ Game.Screen.ConversationScreen.prototype.setup = function(player, conversation) 
 //    conversation.options = options;
     this._conversation = conversation;
     this._options = options;
-    document.getElementById('log').innerHTML += '<p>' + this._conversation.text + '</p>';
+    Messenger.log(this._conversation.text);
 };
 
 Game.Screen.ConversationScreen.prototype.render = function(display) {
     var letters = 'abcdefghijklmnopqrstuvwxyz';
     // Render the caption in the top row
-//    document.getElementById('log').innerHTML += '<p>' + this._conversation.text + '</p>';
-//    document.getElementById('log').scrollTo(0,document.getElementById('log').scrollHeight);
-    var o = document.getElementById('log');
-	o.scrollTop = o.scrollHeight;
     var row = display.drawText(0, 0, this._conversation.text.toUpperCase());
     // Render the no item row if enabled
     row++;
