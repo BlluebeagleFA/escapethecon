@@ -5,14 +5,13 @@ Messenger = function(window, document) {
 
     var _currentAnimationArgs;
     var _debounceTimeoutId
-    var _logEl;
+    var _logEl = document.getElementById('log');
 
     return {
         log: _log
     }
 
     function _log(msg) {
-        if(!_logEl) _logEl = document.getElementById('log');
         var pEl = document.createElement('p');
 
         pEl.innerText = msg;
